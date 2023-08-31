@@ -21,11 +21,11 @@ const titulo = document.querySelector('.app__title')
 
 // Sons
 const musicaFocoInput = document.querySelector('#alternar-musica')
-const musica = new Audio('/sons/luna-rise-part-one.mp3')
+const musica = new Audio('./sons/luna-rise-part-one.mp3')
 musica.loop = true
-const playSong = new Audio('/sons/play.wav')
-const pauseSong = new Audio('/sons/pause.mp3')
-const zerarSong = new Audio('/sons/beep.mp3')
+const playSong = new Audio('./sons/play.wav')
+const pauseSong = new Audio('./sons/pause.mp3')
+const zerarSong = new Audio('./sons/beep.mp3')
 
 // Temporizador
 let tempoDecorridoEmSegundos = 1500
@@ -65,7 +65,7 @@ function alterarContexto(contexto) {
     })
 
     html.setAttribute('data-contexto', contexto)
-    banner.setAttribute('src', `/imagens/${contexto}.png`)
+    banner.setAttribute('src', `./imagens/${contexto}.png`)
     switch (contexto) {
         case 'foco':
             titulo.innerHTML = `
@@ -116,7 +116,7 @@ function iniciarOuPausar() {
     playSong.play()
 
     iniciarOuPausarBt.textContent = "Pausar"
-    playOuPauseImg.setAttribute('src', '/imagens/pause.png')
+    playOuPauseImg.setAttribute('src', './imagens/pause.png')
 
 }
 
@@ -125,7 +125,7 @@ function zerar() {
     intervaloId = null
 
     iniciarOuPausarBt.textContent = "Começar"
-    playOuPauseImg.setAttribute('src', '/imagens/play_arrow.png')
+    playOuPauseImg.setAttribute('src', './imagens/play_arrow.png')
 }
 
 function mostrarTempo() {
